@@ -8,6 +8,11 @@ const MAX_BYTES = 25000
 
 async function run(): Promise<void> {
   try {
+    core.warning(`This action's default branch has been renamed to "main"`)
+    core.warning(
+      `Referencing this action with "@master" is deprecated and will stop working after June 30th 2021`
+    )
+
     const inputs = inputHelper.getInputs()
     core.debug(`Inputs: ${inspect(inputs)}`)
 
